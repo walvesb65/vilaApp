@@ -1,38 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text } from 'react-native';
 
-export default function DateTask ({day}) {
+export default function DateTask({ date }) {
   const [totalDuration, setTotalDuration] = useState(0);
+  const regex = /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/;
 
   useEffect(() => {
     let currDate = moment()
       .format('YYYY-MM-DD hh:mm:ss');
-    let expirydate = day
-    let diffr = moment
-      .duration(moment(expirydate)
-      .diff(moment(currDate)))
-      .asDays();
+    let expirydate = date;
+    let diffr = regex.test(date) ? moment.duration(moment(expirydate).diff(moment(currDate))).asDays() : moment.duration(expirydate, 'days').asDays();
     setTotalDuration(diffr);
   }, []);
 
   return (
-    <View>
-      <Text>{Math.ceil(totalDuration)}</Text>
-    </View>
+    <Text>{Math.ceil(totalDuration)}</Text>
   );
 };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     padding: 10,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   title: {
-//     textAlign: 'center',
-//     fontSize: 20,
-//     fontWeight: 'bold',
-//     padding: 20,
-//   }});

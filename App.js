@@ -14,7 +14,7 @@ export default function App() {
     <NativeBaseProvider>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Welcome" component={Home} />
           <Stack.Screen name="Agenda" component={DetailsScreen} />
           <Stack.Screen name="Tasks" component={Tasks} />
         </Stack.Navigator>

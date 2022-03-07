@@ -8,7 +8,7 @@ export default function Load() {
       <View style={styles.container}>     
         <Center flex={1}>
           <Image source={{
-            uri: "https://i.pinimg.com/originals/e0/94/d9/e094d9bb9a23354435ac138f3200e53d.gif"
+            uri: "https://cdn.dribbble.com/users/4874/screenshots/1792443/media/07162da5c8b25998b759ff1a7aefb9e8.gif"
           }} alt="Alternate Text" size="220" />
         </Center>
       </View>
@@ -20,6 +20,6 @@ const styles = StyleSheet.create({
   container: {
     height: '100%',
     width:'100%',
-    backgroundColor: "#05040f"
+    backgroundColor: "#fff"
   }
 });

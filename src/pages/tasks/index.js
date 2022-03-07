@@ -38,18 +38,19 @@ export default function Tasks({}) {
 
   return (
     <NativeBaseProvider>
-        <VStack w="100%" alignItems="center" marginTop={6}>
-          <Heading mb="2" size="md">
+      <Center w="100%" flex={1} px="3">
+        <Box maxW="300" w="100%">
+          <Heading mb="4" size="md">
             MY AGENDA
           </Heading>
           <VStack space={4}>
-              <HStack space={2} direction="column">
+              <HStack space={5} direction="column">
                 <Input
-                  flex={1}
                   onChangeText={v => setInputValue(v)}
                   value={inputValue}
-                  placeholder="Add name task" />
-                <HStack>
+                  placeholder="Add name task"
+                  height="60"  
+                />
                   <TextInputMask
                     type={'datetime'}
                     options={{ format: 'DD/MM/YYYY' }}
@@ -61,7 +62,8 @@ export default function Tasks({}) {
                   <IconButton
                     borderRadius="sm"
                     variant="solid"
-                    icon={<Icon
+                    icon={
+                    <Icon
                       as={Feather}
                       name="plus"
                       size="sm"
@@ -73,7 +75,6 @@ export default function Tasks({}) {
                     setInputDate("");
                   }} />
                 </HStack>
-              </HStack>
             <VStack space={2} width={{sm: '30%'}}>
               {list.map((item, itemI) =>(
               <HStack w="100%" justifyContent="space-between" alignItems="center" key={item.title + itemI.toString()}>
@@ -90,7 +91,8 @@ export default function Tasks({}) {
               </HStack>))}
             </VStack>
           </VStack>
-        </VStack>
+        </Box>
+      </Center>
     </NativeBaseProvider>
   )
 };

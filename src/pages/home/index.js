@@ -21,7 +21,7 @@ export default function Home({ navigation }) {
         width="50%"
         marginBottom="30%"
       >
-        <Text fontSize="40xs" color="#fff" fontWeight="extrabold">OPEN AGENDA</Text>
+        <Text color="#fff" fontWeight="extrabold">OPEN AGENDA</Text>
       </Button>
 
     </View>

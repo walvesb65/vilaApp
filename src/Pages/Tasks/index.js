@@ -9,14 +9,12 @@ export default function Tasks ({}) {
   const [list, setList] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [inputDays, setInputDays] = useState("")
-  const [inputDate, setInputDate] = useState("")
 
-  const addItem = ({inputValue, inputDays, inputDate}) => {
+  const addItem = ({inputValue, inputDays}) => {
     setList([...list, {
       title: inputValue,
       isCompleted: false,
       day: inputDays,
-      date: inputDate,
     }]);
   };
 
@@ -37,7 +35,7 @@ export default function Tasks ({}) {
       <Center w="100%" flex={1} px="3">
           <Box maxW="300" w="100%">
             <Heading mb="2" size="md">
-              MY AGENDA
+              ADD NEW ITEM
             </Heading>
             <VStack space={4}>
               <HStack space={2}>
@@ -50,20 +48,12 @@ export default function Tasks ({}) {
                     flex={1}
                     onChangeText={v => setInputDays(v)}
                     value={inputDays}
-                    placeholder="when"
-                  />
-                  <Text>OU</Text>
-                  <TextInputMask 
-                    type={'datetime'}
-                    options={{ format: 'YYYY-MM-DD' }}
-                    value={inputDate}
-                    onChangeText={v => setInputDate(v)}
-                    placeholder="when"
+                    placeholder="When"
                   />
                 <IconButton borderRadius="sm" variant="solid" icon={<Icon as={Feather} name="plus" size="sm" color="warmGray.50" />} onPress={() => {
                   addItem({inputValue, inputDays});
                   setInputValue("");
-                  setInputDate("");
+                  setInputDays("");
               }} />
               </HStack>
               <VStack space={2}>
@@ -75,7 +65,7 @@ export default function Tasks ({}) {
                     color: item.isCompleted ? "gray.400" : "coolGray.50"
                   }}>
                         {item.title}
-                    <DateTask date={item.date}/>
+                    <DateTask day={item.day}/>
                       </Text>
                     </Checkbox>
                     <IconButton size="sm" colorScheme="trueGray" icon={<Icon as={Entypo} name="minus" size="xs" color="trueGray.400" />} onPress={() => handleDelete(itemI)} />

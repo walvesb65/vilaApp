@@ -4,14 +4,20 @@ import Load from '../Load';
 
 export default function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: "#05040f"}}>
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: "#05040f",
+      }}>
       <Load />
       <Button
         title="Go to App"
         size="12"
         variant="subtle"
         backgroundColor="#240c84"
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('Agenda')}
         width="50%"
         marginBottom="30%"
       >OPEN AGENDA</Button>

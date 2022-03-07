@@ -17,22 +17,22 @@ export default function DateTask ({day}) {
   }, []);
 
   return (
-    <View styles={styles.container}>
-      <Text styles={styles.title}>{Math.ceil(totalDuration)}</Text>
+    <View>
+      <Text>{Math.ceil(totalDuration)}</Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
-    padding: 20,
-  }});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     padding: 10,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+//   title: {
+//     textAlign: 'center',
+//     fontSize: 20,
+//     fontWeight: 'bold',
+//     padding: 20,
+//   }});

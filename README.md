@@ -5,6 +5,10 @@ Este é um projeto [React.native](https://reactnative.dev/) inicializado com [`e
 Primeiro, execute o servidor de desenvolvimento:
 
 ```bash
+1 - npm install --global expo-cli
+
+Para rodar o servidor:
+
 expo start
 # ou 
 npm start

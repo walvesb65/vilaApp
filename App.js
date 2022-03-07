@@ -1,21 +1,24 @@
-import React from 'react';
-import { Button, View, Text } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { NativeBaseProvider } from 'native-base';
 
-import HomeScreen from './src/Pages/HomeScreen'
-import DetailsScreen from './src/Pages/DetailsScreen'
+import HomeScreen from './src/Pages/HomeScreen';
+import DetailsScreen from './src/Pages/DetailsScreen';
+import Tasks from './src/Pages/Tasks';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <NativeBaseProvider>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen name="Tasks" component={Tasks} />
         </Stack.Navigator>
       </NavigationContainer>
+    </NativeBaseProvider>
   );
 };

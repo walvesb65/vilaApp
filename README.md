@@ -5,7 +5,8 @@ Este é um projeto [React.native](https://reactnative.dev/) inicializado com [`e
 Primeiro, execute o servidor de desenvolvimento:
 
 ```bash
-expo start,
+expo start
+# ou 
 npm start
 # ou
 yarn start

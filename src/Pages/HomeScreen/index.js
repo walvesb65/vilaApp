@@ -13,7 +13,6 @@ export default function HomeScreen({ navigation }) {
       }}>
       <Load />
       <Button
-        title="Go to App"
         size="12"
         variant="subtle"
         backgroundColor="#240c84"

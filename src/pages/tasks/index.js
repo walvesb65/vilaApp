@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Input, IconButton, Checkbox, Text, Box, VStack, HStack, Heading, Icon, Center, NativeBaseProvider } from "native-base";
 import { Feather, Entypo } from "@expo/vector-icons";
-import DateTask from '../Datetest';
 import { TextInputMask } from 'react-native-masked-text';
+import DateTask from '../dateTask';
+import moment from "moment";
 
 export default function Tasks({}) {
 
@@ -11,10 +12,14 @@ export default function Tasks({}) {
   const [inputDate, setInputDate] = useState("")
 
   const addItem = ({ inputValue, inputDate }) => {
+    const regex = /^(0?[1-9]|[12][0-9]|3[01])\/(0?[1-9]|1[012])\/\d{4}$/;
+    moment.defaultFormat = "DD/MM/YYYY"
+    const formatDate = regex.test(inputDate) ? moment(inputDate, moment.defaultFormat).format("YYYY-MM-DD") : inputDate;
+    console.log(formatDate);
     setList([...list, {
       title: inputValue,
       isCompleted: false,
-      date: inputDate,
+      date: formatDate,
     }]);
   };
 
@@ -47,10 +52,10 @@ export default function Tasks({}) {
                 placeholder="Add name task" />
               <TextInputMask
                 type={'datetime'}
-                options={{ format: 'YYYY-MM-DD' }}
+                options={{ format: 'DD/MM/YYYY' }}
                 value={inputDate}
                 onChangeText={v => setInputDate(v)}
-                placeholder="Date: YYYY-MM-DD"
+                placeholder="DAYS OR DD/MM/YYYY"
               />
               <IconButton borderRadius="sm" variant="solid" icon={<Icon as={Feather} name="plus" size="sm" color="warmGray.50" />} onPress={() => {
                 addItem({ inputValue, inputDate });

@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 
 export default function DateTask({ date }) {
   const [totalDuration, setTotalDuration] = useState(0);
-  const regex = /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/;
+  const regex = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/;
 
   useEffect(() => {
     let currDate = moment()
@@ -15,6 +15,6 @@ export default function DateTask({ date }) {
   }, []);
 
   return (
-    <Text>{Math.ceil(totalDuration)}</Text>
+    <Text> Missing {Math.ceil(totalDuration)} days</Text>  
   );
 };

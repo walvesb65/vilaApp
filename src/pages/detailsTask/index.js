@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, View, Text } from 'react-native';
-import Tasks from '../Tasks';
+import Tasks from '../tasks';
 
 export default function DetailsScreen() {
   return (

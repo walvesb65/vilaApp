@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button, View } from 'native-base';
-import Load from '../Load';
+import Load from '../load';
 
-export default function HomeScreen({ navigation }) {
+export default function Home({ navigation }) {
   return (
     <View
       style={{
